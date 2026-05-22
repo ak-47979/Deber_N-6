@@ -71,7 +71,7 @@ public class Main {
             //actualizar profesor
             prodesorBuscado.setNombre("Alex");
             this.profesorService.actualizar(prodesorBuscado);
-            System.out.println("Despues de actualizar: " +prodesorBuscado);
+            System.out.println("Despues de actualizar: " + prodesorBuscado);
             //Eliminar profesor
             profesorService.eliminar(10);
             
