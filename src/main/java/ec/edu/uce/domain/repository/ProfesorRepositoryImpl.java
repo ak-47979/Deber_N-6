@@ -33,8 +33,10 @@ public class ProfesorRepositoryImpl implements ProfesorRepository {
 
     @Override
     public void eliminar(Integer id) {
-        this.em.remove(id);        
-        System.out.println("Se elimino al profesor con Id: "+id);
+         this.em.remove(this.seleccionarPorId(id));
+         System.out.println("Se elimino al profesor con Id: "+id);
+
+        
     }
 
 }

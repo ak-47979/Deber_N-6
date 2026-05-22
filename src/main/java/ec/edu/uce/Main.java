@@ -28,7 +28,7 @@ public class Main {
         public int run(String... args) throws Exception {
             
             System.out.println("Conexion a la base de datos POSTGRES!");
-            
+            /*
             //Creacion de un nuevo Estudiante
             Estudiante estudiante = new Estudiante();
             estudiante.setNombre("Andy");
@@ -42,30 +42,38 @@ public class Main {
 
             //Eliminar un estudiante por ID
             System.out.println("Eliminamos al Estudiante por ID");
-            estudianteService.eliminar(1);
+            estudianteService.eliminar(2);
             
             //Metodo Actualizar
             System.out.println("Actualizar los Datos por ID...");
-            Estudiante estudiante2 = this.estudianteService.buscarPorId(4);
+            Estudiante estudiante2 = this.estudianteService.buscarPorId(3);
             estudiante2.setNombre("Alex");
             this.estudianteService.actualizar(estudiante2);
 
             //Buscar al Estudiante por ID
             System.out.println("Buscando Estudiante por ID...");
             System.out.println(estudianteService.buscarPorId(4).toString());
-        
+        */
             //Profesor
             Profesor profesor = new Profesor();
             profesor.setNombre("Paul");
             profesor.setApellido("Paredes");
             profesor.setMateria("Analisis 1");
             profesor.setNumero("0954628542");
+          /*
+            //crear profesor
+           profesorService.guardar(profesor);
+            //buscar profesor
+            Profesor prodesorBuscado = this.profesorService.seleccionarPorId(10 );
+            System.out.println(prodesorBuscado);
 
-            profesorService.guardar(profesor);
-
-            profesorService.actualizar(profesor);            
-            System.out.println(profesorService.seleccionarPorId(5).toString() );
-            //profesorService.eliminar(1);
+            
+            //actualizar profesor
+            prodesorBuscado.setNombre("Alex");
+            this.profesorService.actualizar(prodesorBuscado);
+            System.out.println("Despues de actualizar: " +prodesorBuscado);*/
+            //Eliminar profesor
+            profesorService.eliminar(10);
             
             return 0;
 
