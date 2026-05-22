@@ -3,7 +3,9 @@ package ec.edu.uce;
 import java.time.LocalDate;
 
 import ec.edu.uce.application.service.EstudianteService;
+import ec.edu.uce.application.service.ProfesorService;
 import ec.edu.uce.domain.model.Estudiante;
+import ec.edu.uce.domain.model.Profesor;
 import io.quarkus.runtime.Quarkus;
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
@@ -19,12 +21,14 @@ public class Main {
 
     @Inject
     private EstudianteService estudianteService;
+    @Inject
+    private ProfesorService profesorService;
 
         @Override
         public int run(String... args) throws Exception {
             
             System.out.println("Conexion a la base de datos POSTGRES!");
-            
+            /* 
             //Creacion de un nuevo Estudiante
             Estudiante estudiante = new Estudiante();
             estudiante.setNombre("Andy");
@@ -49,8 +53,23 @@ public class Main {
             //Buscar al Estudiante por ID
             System.out.println("Buscando Estudiante por ID...");
             System.out.println(estudianteService.buscarPorId(4).toString());
+*/          
+            //Profesor
+            Profesor profesor = new Profesor();
+            profesor.setNombre("Paul");
+            profesor.setApellido("Paredes");
+            profesor.setMateria("Analisis 1");
+            profesor.setNumero("0954628542");
 
+            //profesorService.guardar(profesor);
+
+            //.actualizar(profesor);            
+            System.out.println(profesorService.seleccionarPorId(5).toString() );
+            //profesorService.eliminar(1);
+            
             return 0;
+
+            
         }
 
     }
