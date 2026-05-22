@@ -28,7 +28,7 @@ public class Main {
         public int run(String... args) throws Exception {
             
             System.out.println("Conexion a la base de datos POSTGRES!");
-            /* 
+            
             //Creacion de un nuevo Estudiante
             Estudiante estudiante = new Estudiante();
             estudiante.setNombre("Andy");
@@ -53,7 +53,7 @@ public class Main {
             //Buscar al Estudiante por ID
             System.out.println("Buscando Estudiante por ID...");
             System.out.println(estudianteService.buscarPorId(4).toString());
-*/          
+        
             //Profesor
             Profesor profesor = new Profesor();
             profesor.setNombre("Paul");
@@ -61,9 +61,9 @@ public class Main {
             profesor.setMateria("Analisis 1");
             profesor.setNumero("0954628542");
 
-            //profesorService.guardar(profesor);
+            profesorService.guardar(profesor);
 
-            //.actualizar(profesor);            
+            profesorService.actualizar(profesor);            
             System.out.println(profesorService.seleccionarPorId(5).toString() );
             //profesorService.eliminar(1);
             
