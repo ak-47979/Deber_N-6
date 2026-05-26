@@ -1,5 +1,6 @@
 package ec.edu.uce.domain.model;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.metamodel.EntityType;
 import jakarta.persistence.metamodel.SingularAttribute;
 import jakarta.persistence.metamodel.StaticMetamodel;
@@ -8,6 +9,7 @@ import jakarta.persistence.metamodel.StaticMetamodel;
  * Static metamodel for {@link ec.edu.uce.domain.model.Profesor}
  **/
 @StaticMetamodel(Profesor.class)
+@Generated("org.hibernate.processor.HibernateProcessor")
 public abstract class Profesor_ {
 
 	
