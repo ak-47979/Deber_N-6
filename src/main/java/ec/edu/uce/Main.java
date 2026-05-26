@@ -29,7 +29,7 @@ public class Main {
         public int run(String... args) throws Exception {
 
             System.out.println("Conexion a la base de datos POSTGRES!");
-            /*
+            
              * //Creacion de un nuevo Estudiante
              * Estudiante estudiante = new Estudiante();
              * estudiante.setNombre("Andy");
@@ -76,7 +76,7 @@ public class Main {
              * System.out.println("Despues de actualizar: " + prodesorBuscado);
              * //Eliminar profesor
              * profesorService.eliminar(10);
-             */
+             
             // BUSCAR POR NOMBRE
             List<Profesor> profesoresNombre = this.profesorService.seleccionarPorNombre("Pedro");
 
