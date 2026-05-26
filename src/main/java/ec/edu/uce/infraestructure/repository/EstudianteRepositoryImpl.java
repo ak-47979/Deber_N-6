@@ -1,7 +1,8 @@
-package ec.edu.uce.domain.repository;
+package ec.edu.uce.infraestructure.repository;
 
 
 import ec.edu.uce.domain.model.Estudiante;
+import ec.edu.uce.domain.repository.EstudianteRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
