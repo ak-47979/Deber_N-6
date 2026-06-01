@@ -28,7 +28,8 @@ public class Main {
         public int run(String... args) throws Exception {
 
             System.out.println("Conexion a la base de datos POSTGRES!");
-            //nAMED Query
+            
+            // Named Query
             // Buscar por nombre
             System.out.println("=== Buscar por nombre ===");
             List<Profesor> profesoresNombre = profesorService.seleccionarPorNombreNamed("Paulina");
@@ -54,7 +55,27 @@ public class Main {
             for (Profesor p : profesoresGenero) {
                 System.out.println(p);
             }
-            
+
+            // NATIVE QUERY POR NOMBRE
+            System.out.println("=== BUSCAR POR NOMBRE ===");
+            profesorService.seleccionarPorNombreNative("Pedro")
+                    .forEach(System.out::println);
+
+            // NATIVE QUERY POR NÚMERO
+            System.out.println("\n=== BUSCAR POR NUMERO ===");
+            Profesor profesor = profesorService.seleccionarPorCedulaNative("1730513584");
+
+            if (profesor != null) {
+                System.out.println(profesor);
+            } else {
+                System.out.println("Profesor no encontrado");
+            }
+
+            // NATIVE QUERY POR GÉNERO
+            System.out.println("\n=== BUSCAR POR GENERO ===");
+            profesorService.seleccionarPorGeneroNative("G")
+                    .forEach(System.out::println);
+
             return 0;
         }
 

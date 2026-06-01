@@ -68,5 +68,16 @@ public class ProfesorService {
     public List<Profesor> seleccionarPorGeneroNamed(String genero){
         return this.profesorRepository.seleccionarPorGeneroNamed(genero);
     }
-    
+
+     //Native Query
+     public List<Profesor> seleccionarPorNombreNative(String nombre){
+        return this.profesorRepository.seleccionarPorNombreNative(nombre);
+     }
+    public Profesor seleccionarPorCedulaNative(String cedula){
+        return this.profesorRepository.seleccionarPorCedulaNative(cedula);
+    }
+    public List<Profesor> seleccionarPorGeneroNative(String genero){
+        return this.profesorRepository.seleccionarPorGeneroNative(genero);
+}
+
 }

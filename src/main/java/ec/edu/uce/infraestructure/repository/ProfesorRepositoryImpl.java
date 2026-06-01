@@ -112,33 +112,67 @@ public class ProfesorRepositoryImpl implements ProfesorRepository {
     }
 
     @Override
-public List<Profesor> seleccionarPorNombreNamed(String nombre) {
+    public List<Profesor> seleccionarPorNombreNamed(String nombre) {
 
-    return this.em.createNamedQuery(
-            "Profesor.buscarPorNombre", Profesor.class)
-            .setParameter("nombre", nombre)
-            .getResultList();
-}
-
-@Override
-public Profesor seleccionarPorCedulaNamed(String cedula) {
-
-    try {
         return this.em.createNamedQuery(
-                "Profesor.buscarPorCedula", Profesor.class)
-                .setParameter("cedula", cedula)
-                .getSingleResult();
-    } catch (NoResultException e) {
-        return null;
+                "Profesor.buscarPorNombre", Profesor.class)
+                .setParameter("nombre", nombre)
+                .getResultList();
     }
-}
 
-@Override
-public List<Profesor> seleccionarPorGeneroNamed(String genero) {
+    @Override
+    public Profesor seleccionarPorCedulaNamed(String cedula) {
 
-    return this.em.createNamedQuery(
-            "Profesor.buscarPorGenero", Profesor.class)
-            .setParameter("genero", genero)
-            .getResultList();
-}
+        try {
+            return this.em.createNamedQuery(
+                    "Profesor.buscarPorCedula", Profesor.class)
+                    .setParameter("cedula", cedula)
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public List<Profesor> seleccionarPorGeneroNamed(String genero) {
+
+        return this.em.createNamedQuery(
+                "Profesor.buscarPorGenero", Profesor.class)
+                .setParameter("genero", genero)
+                .getResultList();
+    }
+
+    @Override
+    public List<Profesor> seleccionarPorNombreNative(String nombre) {
+        String sql = """
+        SELECT *
+        FROM profesor
+        WHERE prof_nombre = :nombre
+        """;
+        return this.em.createNativeQuery(sql, Profesor.class)
+                .setParameter("nombre", nombre)
+                .getResultList();
+    }
+
+    @Override
+    public Profesor seleccionarPorCedulaNative(String cedula) {
+
+        String sql = "SELECT * FROM profesor WHERE prof_cedula = :cedula";
+
+        try {
+            return (Profesor) this.em.createNativeQuery(sql, Profesor.class)
+                    .setParameter("cedula", cedula)
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public List<Profesor> seleccionarPorGeneroNative(String genero) {
+        String sql = "SELECT * FROM profesor WHERE prof_genero = :genero";
+        return this.em.createNativeQuery(sql, Profesor.class)
+                .setParameter("genero", genero)
+                .getResultList();
+    }
 }

@@ -37,4 +37,8 @@ public interface ProfesorRepository {
 
     public List<Profesor> seleccionarPorGeneroNamed(String genero);
 
+    // Native Query
+    public List<Profesor> seleccionarPorNombreNative(String nombre);
+    public Profesor seleccionarPorCedulaNative(String cedula);
+    public List<Profesor> seleccionarPorGeneroNative(String genero);
 }
