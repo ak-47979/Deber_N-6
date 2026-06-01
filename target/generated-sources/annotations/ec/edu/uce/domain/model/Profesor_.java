@@ -1,6 +1,6 @@
 package ec.edu.uce.domain.model;
 
-import jakarta.annotation.Generated;
+import jakarta.persistence.TypedQueryReference;
 import jakarta.persistence.metamodel.EntityType;
 import jakarta.persistence.metamodel.SingularAttribute;
 import jakarta.persistence.metamodel.StaticMetamodel;
@@ -9,7 +9,6 @@ import jakarta.persistence.metamodel.StaticMetamodel;
  * Static metamodel for {@link ec.edu.uce.domain.model.Profesor}
  **/
 @StaticMetamodel(Profesor.class)
-@Generated("org.hibernate.processor.HibernateProcessor")
 public abstract class Profesor_ {
 
 	
@@ -37,6 +36,31 @@ public abstract class Profesor_ {
 	 * @see #numero
 	 **/
 	public static final String NUMERO = "numero";
+	
+	/**
+	 * @see #genero
+	 **/
+	public static final String GENERO = "genero";
+	
+	/**
+	 * @see #cedula
+	 **/
+	public static final String CEDULA = "cedula";
+	
+	/**
+	 * @see #_Profesor_buscarPorNombre_
+	 **/
+	public static final String QUERY_PROFESOR_BUSCAR_POR_NOMBRE = "Profesor.buscarPorNombre";
+	
+	/**
+	 * @see #_Profesor_buscarPorCedula_
+	 **/
+	public static final String QUERY_PROFESOR_BUSCAR_POR_CEDULA = "Profesor.buscarPorCedula";
+	
+	/**
+	 * @see #_Profesor_buscarPorGenero_
+	 **/
+	public static final String QUERY_PROFESOR_BUSCAR_POR_GENERO = "Profesor.buscarPorGenero";
 
 	
 	/**
@@ -68,6 +92,37 @@ public abstract class Profesor_ {
 	 * Static metamodel for attribute {@link ec.edu.uce.domain.model.Profesor#numero}
 	 **/
 	public static volatile SingularAttribute<Profesor, String> numero;
+	
+	/**
+	 * Static metamodel for attribute {@link ec.edu.uce.domain.model.Profesor#genero}
+	 **/
+	public static volatile SingularAttribute<Profesor, String> genero;
+	
+	/**
+	 * Static metamodel for attribute {@link ec.edu.uce.domain.model.Profesor#cedula}
+	 **/
+	public static volatile SingularAttribute<Profesor, String> cedula;
+	
+	/**
+	 * The query named {@value QUERY_PROFESOR_BUSCAR_POR_NOMBRE}
+	 *
+	 * @see ec.edu.uce.domain.model.Profesor
+	 **/
+	public static volatile TypedQueryReference<Object> _Profesor_buscarPorNombre_;
+	
+	/**
+	 * The query named {@value QUERY_PROFESOR_BUSCAR_POR_CEDULA}
+	 *
+	 * @see ec.edu.uce.domain.model.Profesor
+	 **/
+	public static volatile TypedQueryReference<Object> _Profesor_buscarPorCedula_;
+	
+	/**
+	 * The query named {@value QUERY_PROFESOR_BUSCAR_POR_GENERO}
+	 *
+	 * @see ec.edu.uce.domain.model.Profesor
+	 **/
+	public static volatile TypedQueryReference<Object> _Profesor_buscarPorGenero_;
 
 }
 

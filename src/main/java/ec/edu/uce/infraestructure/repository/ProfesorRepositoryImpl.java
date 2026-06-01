@@ -7,6 +7,7 @@ import ec.edu.uce.domain.repository.ProfesorRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 
@@ -110,4 +111,34 @@ public class ProfesorRepositoryImpl implements ProfesorRepository {
         return lista.get(0);
     }
 
+    @Override
+public List<Profesor> seleccionarPorNombreNamed(String nombre) {
+
+    return this.em.createNamedQuery(
+            "Profesor.buscarPorNombre", Profesor.class)
+            .setParameter("nombre", nombre)
+            .getResultList();
+}
+
+@Override
+public Profesor seleccionarPorCedulaNamed(String cedula) {
+
+    try {
+        return this.em.createNamedQuery(
+                "Profesor.buscarPorCedula", Profesor.class)
+                .setParameter("cedula", cedula)
+                .getSingleResult();
+    } catch (NoResultException e) {
+        return null;
+    }
+}
+
+@Override
+public List<Profesor> seleccionarPorGeneroNamed(String genero) {
+
+    return this.em.createNamedQuery(
+            "Profesor.buscarPorGenero", Profesor.class)
+            .setParameter("genero", genero)
+            .getResultList();
+}
 }

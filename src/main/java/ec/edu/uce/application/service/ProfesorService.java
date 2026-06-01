@@ -58,4 +58,15 @@ public class ProfesorService {
     public Profesor seleccionarPorNumero(String numero){
         return this.profesorRepository.seleccionarPorNumero(numero);
     }
+    //Named Query
+     public List<Profesor> seleccionarPorNombreNamed(String nombre){
+        return this.profesorRepository.seleccionarPorNombreNamed(nombre);
+     }
+    public Profesor seleccionarPorCedulaNamed(String cedula){
+        return this.profesorRepository.seleccionarPorCedulaNamed(cedula);
+    }
+    public List<Profesor> seleccionarPorGeneroNamed(String genero){
+        return this.profesorRepository.seleccionarPorGeneroNamed(genero);
+    }
+    
 }
