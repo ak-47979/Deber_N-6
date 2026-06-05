@@ -2,6 +2,7 @@ package ec.edu.uce.application.service;
 
 import java.util.List;
 
+import ec.edu.uce.domain.model.Estudiante;
 import ec.edu.uce.domain.model.Profesor;
 import ec.edu.uce.domain.repository.ProfesorRepository;
 
@@ -79,5 +80,18 @@ public class ProfesorService {
     public List<Profesor> seleccionarPorGeneroNative(String genero){
         return this.profesorRepository.seleccionarPorGeneroNative(genero);
 }
+    //criteriaQuery
+    public List<Profesor> seleccionarTodosCriteria(){
+        return this.profesorRepository.seleccionarTodosCriteria();
+    }
+    
+    public List<Profesor> seleccionarPorNombreCriteria(String nombre){
+        return this.profesorRepository.seleccionarPorNombreCriteria(nombre);
+    }
+
+
+    public List<Profesor> seleccionarDinamica(String nombre, String apellido){
+        return this.profesorRepository.seleccionarDinamica(nombre, apellido);
+    }
 
 }
