@@ -1,9 +1,7 @@
 package ec.edu.uce.domain.model;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-import io.quarkus.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
