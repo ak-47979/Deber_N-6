@@ -3,6 +3,7 @@ package ec.edu.uce.domain.repository;
 import java.util.List;
 
 import ec.edu.uce.domain.model.Estudiante;
+import ec.edu.uce.domain.model.Horario;
 import ec.edu.uce.domain.model.Profesor;
 
 public interface ProfesorRepository {
@@ -49,4 +50,5 @@ public interface ProfesorRepository {
 
 
     public List<Profesor> seleccionarDinamica(String nombre, String apellido);
+    
 }

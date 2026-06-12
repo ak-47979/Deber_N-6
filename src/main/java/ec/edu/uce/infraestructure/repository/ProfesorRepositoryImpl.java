@@ -5,6 +5,7 @@ import java.util.List;
 
 
 import ec.edu.uce.domain.model.Estudiante;
+import ec.edu.uce.domain.model.Horario;
 import ec.edu.uce.domain.model.Profesor;
 import ec.edu.uce.domain.repository.ProfesorRepository;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -133,6 +134,7 @@ public class ProfesorRepositoryImpl implements ProfesorRepository {
             return this.em.createNamedQuery(
                     "Profesor.buscarPorCedula", Profesor.class)
                     .setParameter("cedula", cedula)
+                    .setMaxResults(1)
                     .getSingleResult();
         } catch (NoResultException e) {
             return null;
@@ -224,4 +226,6 @@ public class ProfesorRepositoryImpl implements ProfesorRepository {
         TypedQuery<Profesor> con = this.em.createQuery(mQuery);
         return con.getResultList();
     }
+
+    
 }

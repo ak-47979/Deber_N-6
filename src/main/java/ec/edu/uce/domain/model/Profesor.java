@@ -1,14 +1,17 @@
 package ec.edu.uce.domain.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToOne;
 @Entity
 @Table(name = "profesor")
 
@@ -47,12 +50,18 @@ public class Profesor {
     private String genero;
     @Column(name ="prof_cedula")
     private String cedula;
-    public Profesor(){
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="horario_Profesor")
+    private Horario horario;
 
+
+    public Profesor(){
+        
     }
-    public Profesor(Integer id, String nombre, String apellido, String materia, String numero, String genero,
+    
+    public Profesor( String nombre, String apellido, String materia, String numero, String genero,
             String cedula) {
-        Id = id;
+       
         this.nombre = nombre;
         this.apellido = apellido;
         this.materia = materia;
@@ -60,6 +69,7 @@ public class Profesor {
         this.genero = genero;
         this.cedula = cedula;
     }
+
     public Integer getId() {
         return Id;
     }
@@ -108,6 +118,13 @@ public class Profesor {
                 + ", numero=" + numero + ", genero=" + genero + ", cedula=" + cedula + "]";
     }
 
-   
-    
+    public Horario getHorario() {
+        return horario;
+    }
+
+    public void setHorario(Horario horario) {
+        this.horario = horario;
+    }
+
+        
 }

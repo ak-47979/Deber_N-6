@@ -48,6 +48,11 @@ public abstract class Profesor_ {
 	public static final String CEDULA = "cedula";
 	
 	/**
+	 * @see #horario
+	 **/
+	public static final String HORARIO = "horario";
+	
+	/**
 	 * @see #_Profesor_buscarPorNombre_
 	 **/
 	public static final String QUERY_PROFESOR_BUSCAR_POR_NOMBRE = "Profesor.buscarPorNombre";
@@ -102,6 +107,11 @@ public abstract class Profesor_ {
 	 * Static metamodel for attribute {@link ec.edu.uce.domain.model.Profesor#cedula}
 	 **/
 	public static volatile SingularAttribute<Profesor, String> cedula;
+	
+	/**
+	 * Static metamodel for attribute {@link ec.edu.uce.domain.model.Profesor#horario}
+	 **/
+	public static volatile SingularAttribute<Profesor, Horario> horario;
 	
 	/**
 	 * The query named {@value QUERY_PROFESOR_BUSCAR_POR_NOMBRE}
