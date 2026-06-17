@@ -2,7 +2,6 @@ package ec.edu.uce.application.service;
 
 import java.util.List;
 
-import ec.edu.uce.domain.model.Estudiante;
 import ec.edu.uce.domain.model.Horario;
 import ec.edu.uce.domain.model.Profesor;
 import ec.edu.uce.domain.repository.ProfesorRepository;
@@ -95,5 +94,9 @@ public class ProfesorService {
         return this.profesorRepository.seleccionarDinamica(nombre, apellido);
     }
 
+    //one to one
+    public void guardarRe(Profesor profesor, Horario horario){
+        this.profesorRepository.guardar(profesor, horario);
+    }
     
 }

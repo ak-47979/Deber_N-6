@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import ec.edu.uce.domain.model.Estudiante;
+
 import ec.edu.uce.domain.model.Horario;
 import ec.edu.uce.domain.model.Profesor;
 import ec.edu.uce.domain.repository.ProfesorRepository;
@@ -225,6 +225,13 @@ public class ProfesorRepositoryImpl implements ProfesorRepository {
         mQuery.where(condiciones);
         TypedQuery<Profesor> con = this.em.createQuery(mQuery);
         return con.getResultList();
+    }
+
+    @Override
+    public void guardar(Profesor profesor, Horario horario) {
+        profesor.setHorario(horario);
+        this.em.persist(profesor);
+        System.out.println("Se inserto la relacion one to one Profesor-Horario");
     }
 
     

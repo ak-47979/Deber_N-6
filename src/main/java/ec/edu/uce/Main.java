@@ -1,9 +1,7 @@
 package ec.edu.uce;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-import ec.edu.uce.application.service.EstudianteService;
 import ec.edu.uce.application.service.HorarioService;
 import ec.edu.uce.application.service.ProfesorService;
 import ec.edu.uce.domain.model.Horario;
@@ -33,21 +31,16 @@ public class Main {
             LocalDateTime timeInicio = LocalDateTime.of(2026, 11, 12, 7, 01, 56);
             LocalDateTime timeFin = LocalDateTime.of(2026, 11, 12, 14, 12, 12);
              Horario horario = new Horario("Lunes",timeInicio,timeFin );
-            Profesor profesor = new Profesor( "Amanda","Dalas",
+            Profesor profesor = new Profesor( "Camila","Dalas",
                     "Quimica",
                     "0945324685",
                     "G",
-                    "1712345678"
+                    "1712345378"
             );
 
             System.out.println("Guardadando datos");
+            profesorService.guardarRe(profesor, horario);
             
-            profesorService.guardar(profesor);
-            horarioService.guardar(horario);
-            System.out.println("Asignando horario");
-            Profesor p = profesorService.seleccionarPorCedulaNamed("1712345678");
-            
-            horarioService.asignar(p.getId(), horario);
             
             
             return 0;

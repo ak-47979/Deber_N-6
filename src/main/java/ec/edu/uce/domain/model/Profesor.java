@@ -50,7 +50,7 @@ public class Profesor {
     private String genero;
     @Column(name ="prof_cedula")
     private String cedula;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name="horario_Profesor")
     private Horario horario;
 
