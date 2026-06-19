@@ -2,6 +2,7 @@ package ec.edu.uce.domain.model;
 
 import jakarta.persistence.TypedQueryReference;
 import jakarta.persistence.metamodel.EntityType;
+import jakarta.persistence.metamodel.ListAttribute;
 import jakarta.persistence.metamodel.SingularAttribute;
 import jakarta.persistence.metamodel.StaticMetamodel;
 
@@ -56,6 +57,11 @@ public abstract class Profesor_ {
 	 * @see #departamento
 	 **/
 	public static final String DEPARTAMENTO = "departamento";
+	
+	/**
+	 * @see #proyectos
+	 **/
+	public static final String PROYECTOS = "proyectos";
 	
 	/**
 	 * @see #_Profesor_buscarPorNombre_
@@ -122,6 +128,11 @@ public abstract class Profesor_ {
 	 * Static metamodel for attribute {@link ec.edu.uce.domain.model.Profesor#departamento}
 	 **/
 	public static volatile SingularAttribute<Profesor, Departamento> departamento;
+	
+	/**
+	 * Static metamodel for attribute {@link ec.edu.uce.domain.model.Profesor#proyectos}
+	 **/
+	public static volatile ListAttribute<Profesor, Proyecto> proyectos;
 	
 	/**
 	 * The query named {@value QUERY_PROFESOR_BUSCAR_POR_NOMBRE}

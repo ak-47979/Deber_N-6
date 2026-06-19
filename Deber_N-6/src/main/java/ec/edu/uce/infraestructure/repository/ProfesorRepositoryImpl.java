@@ -3,8 +3,7 @@ package ec.edu.uce.infraestructure.repository;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
+import ec.edu.uce.domain.model.Departamento;
 import ec.edu.uce.domain.model.Horario;
 import ec.edu.uce.domain.model.Profesor;
 import ec.edu.uce.domain.repository.ProfesorRepository;
@@ -234,5 +233,7 @@ public class ProfesorRepositoryImpl implements ProfesorRepository {
         System.out.println("Se inserto la relacion one to one Profesor-Horario");
     }
 
-    
+    public void guardarPro(Profesor profesor){
+        this.em.merge(profesor);
+    }
 }

@@ -2,8 +2,10 @@ package ec.edu.uce.application.service;
 
 import java.util.List;
 
+import ec.edu.uce.domain.model.Departamento;
 import ec.edu.uce.domain.model.Horario;
 import ec.edu.uce.domain.model.Profesor;
+import ec.edu.uce.domain.model.Proyecto;
 import ec.edu.uce.domain.repository.ProfesorRepository;
 
 import jakarta.enterprise.context.ApplicationScoped;
@@ -98,5 +100,8 @@ public class ProfesorService {
     public void guardarRe(Profesor profesor, Horario horario){
         this.profesorRepository.guardar(profesor, horario);
     }
-    
+    public void guardarPro(Profesor profesor, List<Proyecto> proyectos){
+        profesor.setProyectos(proyectos);
+        this.profesorRepository.guardarPro(profesor);
+    }
 }

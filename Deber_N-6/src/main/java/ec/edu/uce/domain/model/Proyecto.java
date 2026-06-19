@@ -1,12 +1,18 @@
 package ec.edu.uce.domain.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
@@ -23,18 +29,20 @@ public class Proyecto {
     private String nombre;
 
     @Column(name = "proy_ini")
-    private LocalDate fechaIni; 
+    private LocalDateTime fechaIni; 
 
     @Column(name = "proy_fin")
-    private LocalDate fechaFin;
+    private LocalDateTime fechaFin;
 
-    @ManyToMany
-    private Profesor profesor;
+    @ManyToMany(mappedBy = "proyectos")
+    private List<Profesor> profesores = new ArrayList<>();
+
+   
 
     public Proyecto() {
     }
 
-    public Proyecto(String nombre, LocalDate fechaIni, LocalDate fechaFin) {
+    public Proyecto(String nombre, LocalDateTime fechaIni, LocalDateTime fechaFin) {
         this.nombre = nombre;
         this.fechaIni = fechaIni;
         this.fechaFin = fechaFin;
@@ -56,19 +64,19 @@ public class Proyecto {
         this.nombre = nombre;
     }
 
-    public LocalDate getFechaIni() {
+    public LocalDateTime getFechaIni() {
         return fechaIni;
     }
 
-    public void setFechaIni(LocalDate fechaIni) {
+    public void setFechaIni(LocalDateTime fechaIni) {
         this.fechaIni = fechaIni;
     }
 
-    public LocalDate getFechaFin() {
+    public LocalDateTime getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(LocalDate fechaFin) {
+    public void setFechaFin(LocalDateTime fechaFin) {
         this.fechaFin = fechaFin;
     }
 

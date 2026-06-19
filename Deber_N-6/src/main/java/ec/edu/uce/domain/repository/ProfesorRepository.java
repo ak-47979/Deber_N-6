@@ -2,6 +2,7 @@ package ec.edu.uce.domain.repository;
 
 import java.util.List;
 
+import ec.edu.uce.domain.model.Departamento;
 import ec.edu.uce.domain.model.Horario;
 import ec.edu.uce.domain.model.Profesor;
 
@@ -49,5 +50,6 @@ public interface ProfesorRepository {
 
     //OnetoOne
     public void guardar(Profesor profesor, Horario horario);
-    
+    //ManytoMany
+    public void guardarPro(Profesor profesor);
 }

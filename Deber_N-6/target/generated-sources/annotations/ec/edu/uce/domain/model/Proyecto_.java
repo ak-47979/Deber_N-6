@@ -1,9 +1,10 @@
 package ec.edu.uce.domain.model;
 
 import jakarta.persistence.metamodel.EntityType;
+import jakarta.persistence.metamodel.ListAttribute;
 import jakarta.persistence.metamodel.SingularAttribute;
 import jakarta.persistence.metamodel.StaticMetamodel;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * Static metamodel for {@link ec.edu.uce.domain.model.Proyecto}
@@ -31,6 +32,11 @@ public abstract class Proyecto_ {
 	 * @see #fechaFin
 	 **/
 	public static final String FECHA_FIN = "fechaFin";
+	
+	/**
+	 * @see #profesores
+	 **/
+	public static final String PROFESORES = "profesores";
 
 	
 	/**
@@ -51,12 +57,17 @@ public abstract class Proyecto_ {
 	/**
 	 * Static metamodel for attribute {@link ec.edu.uce.domain.model.Proyecto#fechaIni}
 	 **/
-	public static volatile SingularAttribute<Proyecto, LocalDate> fechaIni;
+	public static volatile SingularAttribute<Proyecto, LocalDateTime> fechaIni;
 	
 	/**
 	 * Static metamodel for attribute {@link ec.edu.uce.domain.model.Proyecto#fechaFin}
 	 **/
-	public static volatile SingularAttribute<Proyecto, LocalDate> fechaFin;
+	public static volatile SingularAttribute<Proyecto, LocalDateTime> fechaFin;
+	
+	/**
+	 * Static metamodel for attribute {@link ec.edu.uce.domain.model.Proyecto#profesores}
+	 **/
+	public static volatile ListAttribute<Proyecto, Profesor> profesores;
 
 }
 
